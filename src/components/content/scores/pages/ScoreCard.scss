@@ -1,0 +1,28 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.card-template{
+    background-image: linear-gradient(rgb(27, 27, 27), rgb(255, 255, 255));
+    height: 250px;
+    width: 325px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card-page {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+   
+

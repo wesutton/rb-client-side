@@ -1,0 +1,13 @@
+ .auth-background{
+    background-image: url('../assets/AuthBackground.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+ }
+ .auth-container{
+    background-color: rgba(163, 157, 157, 0.5);
+    margin-top: 100px;
+}
