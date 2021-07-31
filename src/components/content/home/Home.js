@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss'
 import {Container, Row, Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Home extends React.Component {
 

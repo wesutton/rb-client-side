@@ -3,6 +3,7 @@ import './App.css';
 import Auth from './auth/Auth';
 import Sitebar from './components/Navbar';
 import Home from './components/Home';
+import Footer from './components/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 

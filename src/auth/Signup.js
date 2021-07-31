@@ -154,7 +154,6 @@ const NormalSignupForm = (props) => {
         <Button type="primary" htmlType="submit" className="login-form-button">
           Sign up
         </Button>
-        Or <a href="">register now!</a>
       </Form.Item>
     </Form>
     </div>
