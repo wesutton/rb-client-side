@@ -74,7 +74,7 @@ class MessageGroup extends React.Component {
             <div className = "card mt-4 mb-3">
                 <div className="card-header"><strong>Comments</strong></div>
                 <div className="card-body">
-                    <textarea name="message" className="form-control" placeholder="Add a new comment" value={message} onChange ={this.changeHandler}>
+                    <textarea name="message" required = "required" className="form-control" placeholder="Add a new comment" value={message} onChange ={this.changeHandler}>
                     </textarea>
                 </div>
             </div> 

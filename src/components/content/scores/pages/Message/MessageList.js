@@ -24,9 +24,12 @@ class MessageList extends React.Component {
             return (
                 <div>
                     <div key = {key}>
-                        {messages.message}
+                        <ul class="list-group">
+                         <li class="list-group-item"> user {messages.owner}: {messages.message} </li>
+                        </ul>
                     </div>
                 </div>
+   
             )
         })
         return (

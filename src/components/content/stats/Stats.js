@@ -7,14 +7,14 @@ class ScoreCard extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            games:[],
+            stats:[],
             current_page: 1
             
         }
     }
 
     async componentDidMount(){
-        const url = `https://www.balldontlie.io/api/v1/games?seasons[]=2020&page=${this.state.current_page}`;
+        const url = `https://www.balldontlie.io/api/v1/stats?seasons[]=2020&per_page=100`;
         let result = null;
         try{
             result = await axios(url, {
@@ -25,15 +25,15 @@ class ScoreCard extends React.Component {
         } catch(e){
             console.log(e)
         }
-        this.setState({games: result.data.data})
+        this.setState({stats: result.data.data})
         this.setState({current_page: result.data.meta.current_page})
     }
 
     render(){
-        const {games} = this.state;
+        const {stats} = this.state;
         const {current_page} = this.state;
-        console.log({games});
-        let mappedArray = (games).map((games, key) => {
+        console.log({stats});
+        let mappedArray = (stats).map((stats, key) => {
             return(
             
             <div className ="card-container">
@@ -42,17 +42,23 @@ class ScoreCard extends React.Component {
                 <thead>
                 <tr>
                     <th></th>
-                    <th scope ="col" key = {key}>{games.home_team.full_name}</th>
-                    <td> vs </td>
-                    <th scope ="col" >{games.visitor_team.full_name}</th>
+                    <th scope ="col" key = {key}>{stats.player.first_name}</th>
+                    <td>  </td>
+                    <th scope ="col" >{stats.player.last_name}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th scope = "row"></th>
-                    <td >{games.home_team_score}</td>
+                    <td >Team: {stats.team.abbreviation}</td>
                     <td></td>
-                    <td >{games.visitor_team_score}</td>
+                    <td >Position: {stats.player.position}</td>
+                </tr>
+                <tr>
+                    <th scope = "row"> last game: </th>
+                    <td >Points: {stats.pts}</td>
+                    <td></td>
+                    <td >Rebounds: {stats.reb}</td>
                 </tr>
                 </tbody>
                 </table>
@@ -62,7 +68,7 @@ class ScoreCard extends React.Component {
         })
     return (
         <div >
-        
+            <h2>Stats</h2>
             <div className = "card-page">
                 {mappedArray}
             </div>

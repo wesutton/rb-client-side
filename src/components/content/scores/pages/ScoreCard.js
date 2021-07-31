@@ -63,7 +63,7 @@ class ScoreCard extends React.Component {
             <div>
                 <MessageList />
             </div>
-            <div>
+            <div className = "scorecard-messagegroup">
                 <MessageGroup />
             </div>
             </div>
